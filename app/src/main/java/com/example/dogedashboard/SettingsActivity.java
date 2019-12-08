@@ -60,8 +60,8 @@ public class SettingsActivity extends FragmentActivity {
 
     public void sendOnChannel1(View view) {
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
-        EditText editTextTitle = findViewById(R.id.edit_text_title);
-        EditText editTextMessage = findViewById(R.id.edit_text_message);
+        TextView editTextTitle = findViewById(R.id.edit_text_title);
+        TextView editTextMessage = findViewById(R.id.edit_text_message);
         String title = editTextTitle.getText().toString();
         String message = editTextMessage.getText().toString();
 
