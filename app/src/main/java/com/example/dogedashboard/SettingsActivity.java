@@ -64,12 +64,17 @@ public class SettingsActivity extends FragmentActivity {
         String title = editTextTitle.getText().toString();
         String message = editTextMessage.getText().toString();
 
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
         Notification notification = new NotificationCompat.Builder(this, DogeApp.CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_time)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
-
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true)
                 .build();
         notificationManagerCompat.notify(1,notification);
 
