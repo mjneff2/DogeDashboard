@@ -17,7 +17,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import static com.example.dogedashboard.DogeApp.CHANNEL_ID;
 
 import java.sql.Time;
 import java.text.DateFormat;
@@ -70,6 +69,7 @@ public class SettingsActivity extends FragmentActivity {
                 .setContentTitle(title)
                 .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
+
                 .build();
         notificationManagerCompat.notify(1,notification);
 
